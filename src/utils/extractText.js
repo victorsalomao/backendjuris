@@ -24,39 +24,22 @@ async function extractTextFromFile(file) {
   }
 }
 
-const basePrompt = `Prompt de Análise Jurídico-Processual Preliminar – Unidade Jurisdicional:
+const basePrompt = `Prompt Resumido para Análise Jurídico-Processual – Cível/Família/Admin
+Solicito análise técnico-jurídica sobre o processo abaixo, com foco na triagem e apoio à decisão judicial.
 
-Solicito análise técnico-jurídica estruturada sobre o seguinte processo:
-
-Número do Processo: [informar]
-
-Classe Processual e Assunto: [ex: ação de cobrança, revisão contratual, guarda, alimentos, improbidade administrativa]
-
-Documentos Relevantes Anexados: [ex: petição inicial, contestação, réplica, provas documentais, laudos, pareceres]
-
-Partes Envolvidas: [ex: autor Fulano, réu Sicrano, advogados, intervenientes]
-
-Momento Processual: [ex: fase postulatória, instrução, decisão interlocutória pendente, sentença, fase de cumprimento]
-
-Pedidos Formulados: [resumo objetivo dos pedidos do autor e eventual reconvenção ou defesa do réu]
-
-Prazos ou Questões Urgentes: [ex: risco de perecimento de direito, prazo de contestação, prescrição, pedido de tutela antecipada]
-
-Questão Central: [ex: validade de cláusula contratual, necessidade de alimentos provisórios, competência, litispendência, interesse de agir]
-
-Requer-se que o parecer contenha:
-
-Identificação das questões controvertidas;
-
-Exame da presença de pressupostos processuais e condições da ação;
-
-Fundamentos jurídicos aplicáveis (legislação, doutrina e jurisprudência);
-
-Sugestão fundamentada para eventual despacho, decisão ou sentença (se for o caso);
-
-Análise de possíveis incidentes processuais (ex: tutela, incidente de desconsideração, provas pendentes, etc.).
-
-Finalidade: subsidiar tecnicamente o(a) juiz(a) na condução processual, com fundamento jurídico claro, objetivo e respeitando os princípios da imparcialidade e da função jurisdicional.`
+Dados:
+Nº do Processo: [inserir]
+Classe/Assunto: [ex: cobrança, alimentos, improbidade]
+Partes: [autor, réu, advogados]
+Momento Processual: [inicial, contestação, saneamento, instrução, sentença, recurso, cumprimento]
+Pedidos: [resumo dos pedidos e defesas]
+Prazos Urgentes: [ex: tutela, prescrição, prazo para manifestação]
+Questão Central: [ex: validade de cláusula, guarda, responsabilidade civil]
+Solicita-se que a análise contenha:
+Pontos controvertidos e riscos processuais;
+Fundamentos jurídicos aplicáveis (lei e jurisprudência);
+Sugestão técnica de despacho, decisão ou sentença, se cabível.
+Finalidade: apoiar o juiz com subsídio jurídico claro, objetivo e alinhado à legalidade e eficiência da prestação jurisdicional.`
 
 async function fetchGPTResponse(area, content) {
   const userPrompt = `
