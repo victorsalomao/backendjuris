@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-const { analyzePrompt } = require("../utils/extractText");
+const { analyzePrompt, fetchGPTResponse} = require("../utils/extractText");
 const fs = require("fs");
 
 const router = express.Router();
