@@ -99,11 +99,16 @@ Descrição do caso: ${content}
   return completion.choices[0].message.content;
 }
 
-async function analyzePrompt({ file }) {
+async function analyzePrompt({ file, description}) {
     console.log("DEBUG - arquivo:", file);
     console.log("DEBUG - descrição:", description);
-  const text = await extractTextFromFile(file);
-  return text;
+  if (file) {
+    const text = await extractTextFromFile(file);
+    return text;
+  }
+
+  return description;
+
 }
 
 module.exports = { analyzePrompt, fetchGPTResponse };

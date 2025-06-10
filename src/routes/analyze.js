@@ -14,7 +14,7 @@ router.post("/", upload.single("file"), async (req, res) => {
 
     // Se tiver arquivo, extrai o conteúdo, senão usa a descrição
     const content = file
-      ? await analyzePrompt({ file })
+      ? await analyzePrompt({ file, description })
       : description;
 
     if (!content || content.trim().length < 20) {
