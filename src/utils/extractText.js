@@ -24,31 +24,7 @@ async function extractTextFromFile(file) {
   }
 }
 
-const basePrompt = `CONCEITUAÇÃO DO TRABALHO DO ASSESSOR JURÍDICO EM UNIDADE JURISDICIONAL (CÍVEL, FAMÍLIA E ADMINISTRATIVO)
-O Assessor Jurídico de unidade jurisdicional presta apoio técnico direto ao magistrado, auxiliando na triagem, análise e elaboração de minutas e pareceres técnico-jurídicos nos feitos sob sua responsabilidade. Sua atuação abrange as áreas de Direito Civil, Processual Civil, Direito de Família e Direito Administrativo, dentro da estrutura do Poder Judiciário.
-
-As principais funções incluem:
-
-Leitura crítica e análise processual de autos físicos ou eletrônicos;
-
-Identificação das partes, causa de pedir e pedidos;
-
-Delimitação do momento processual (petição inicial, contestação, saneamento, provas, sentença, fase recursal ou cumprimento de sentença);
-
-Exame de requisitos processuais e eventuais nulidades;
-
-Enquadramento jurídico da demanda com base em doutrina, legislação e jurisprudência;
-
-Verificação de prazos, decadência, prescrição e coisa julgada;
-
-Análise de tutelas provisórias, incidentes processuais e meios de defesa;
-
-Sugerir encaminhamentos viáveis para despacho, decisão interlocutória, sentença ou homologação.
-
-O assessor jurídico atua com imparcialidade técnica, observando os princípios do contraditório, ampla defesa, celeridade, segurança jurídica e legalidade, sem substituição da função judicante, mas subsidiando o julgador com informações jurídicas estruturadas e bem fundamentadas.
-
-🧾 MODELO DE PROMPT PARA ANÁLISE JURÍDICA EM UNIDADE JURISDICIONAL (CÍVEL/FAMÍLIA/ADMINISTRATIVO)
-Prompt de Análise Jurídico-Processual Preliminar – Unidade Jurisdicional:
+const basePrompt = `Prompt de Análise Jurídico-Processual Preliminar – Unidade Jurisdicional:
 
 Solicito análise técnico-jurídica estruturada sobre o seguinte processo:
 
