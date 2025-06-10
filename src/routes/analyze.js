@@ -4,13 +4,15 @@ const { analyzePrompt, fetchGPTResponse} = require("../utils/extractText");
 const fs = require("fs");
 
 const router = express.Router();
-const upload = multer({ dest: "uploads/" });
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 router.post("/", upload.single("file"), async (req, res) => {
   try {
     const { area, description } = req.body;
     const file = req.file;
 
+    // Se tiver arquivo, extrai o conteúdo, senão usa a descrição
     const content = file
       ? await analyzePrompt({ file })
       : description;
@@ -21,11 +23,9 @@ router.post("/", upload.single("file"), async (req, res) => {
 
     const response = await fetchGPTResponse(area, content);
 
-    if (file) fs.unlinkSync(file.path);
-
     res.json({ reply: response });
   } catch (error) {
-    console.error(error);
+    console.error("Erro interno:", error);
     res.status(500).json({ error: "Erro interno no servidor." });
   }
 });

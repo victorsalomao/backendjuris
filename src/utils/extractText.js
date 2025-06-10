@@ -9,7 +9,7 @@ const openai = new OpenAI({
 
 async function extractTextFromFile(file) {
   const ext = file.originalname.split(".").pop().toLowerCase();
-  const buffer = fs.readFileSync(file.path);
+  const buffer = file.buffer;
 
   if (ext === "pdf") {
     const data = await pdfParse(buffer);
@@ -100,6 +100,8 @@ Descrição do caso: ${content}
 }
 
 async function analyzePrompt({ file }) {
+    console.log("DEBUG - arquivo:", file);
+    console.log("DEBUG - descrição:", description);
   const text = await extractTextFromFile(file);
   return text;
 }
