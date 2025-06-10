@@ -18,7 +18,7 @@ async function extractTextFromFile(file) {
   } else if (ext === "txt") {
     return buffer.toString("utf-8");
   } else {
-    throw new Error("Formato de arquivo não suportado.");
+    throw new Error("Formato de arquivo não suportado");
   }
 }
 
