@@ -3,7 +3,9 @@ const mammoth = require("mammoth");
 const fs = require("fs");
 const { OpenAI } = require("openai");
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+     apiKey: process.env.OPENAI_API_KEY
+});
 
 async function extractTextFromFile(file) {
   const ext = file.originalname.split(".").pop().toLowerCase();

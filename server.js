@@ -1,9 +1,11 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
-const analyzeRouter = require("./routes/analyze");
+const analyzeRouter = require("./src/routes/analyze");
 
-dotenv.config();
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
